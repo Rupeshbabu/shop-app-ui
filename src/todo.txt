@@ -1,0 +1,238 @@
+//Start Integrated pagination
+// data.service.ts
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class DataService {
+  constructor(private http: HttpClient) {}
+
+  getData(page: number, pageSize: number) {
+    return this.http.get(`/api/data?page=${page}&pageSize=${pageSize}`);
+  }
+}
+
+// data.component.ts
+import { Component, OnInit } from '@angular/core';
+import { DataService } from './data.service';
+
+@Component({
+  selector: 'app-data',
+  templateUrl: './data.component.html',
+  styleUrls: ['./data.component.css']
+})
+export class DataComponent implements OnInit {
+  data: any[] = [];
+  currentPage = 1;
+  pageSize = 10;
+  totalPages = 0;
+
+  constructor(private dataService: DataService) {}
+
+  ngOnInit() {
+    this.getData();
+  }
+
+  getData() {
+    this.dataService.getData(this.currentPage, this.pageSize)
+      .subscribe((response: any) => {
+        this.data = response.data;
+        this.totalPages = Math.ceil(response.totalCount / this.pageSize);
+      });
+  }
+
+  nextPage() {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+      this.getData();
+    }
+  }
+
+  previousPage() {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      this.getData();
+    }
+  }
+
+  goToPage(page: number) {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
+      this.getData();
+    }
+  }
+}
+
+<!-- data.component.html -->
+<div *ngFor="let item of data">
+  <!-- Display item data -->
+</div>
+
+<button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+<button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+<div *ngFor="let pageNumber of totalPagesArray" (click)="goToPage(pageNumber)">{{pageNumber}}</div>
+
+
+//End Integrated pagination
+=======================================================================
+//start with pagination and page pageSize
+
+// data.service.ts
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class DataService {
+  constructor(private http: HttpClient) {}
+
+  getData(page: number, pageSize: number) {
+    return this.http.get(`/api/data?page=${page}&pageSize=${pageSize}`);
+  }
+}
+
+// data.component.ts
+import { Component, OnInit } from '@angular/core';
+import { DataService } from './data.service';
+
+@Component({
+  selector: 'app-data',
+  templateUrl: './data.component.html',
+  styleUrls: ['./data.component.css']
+})
+export class DataComponent implements OnInit {
+  data: any[] = [];
+  currentPage = 1;
+  pageSize = 10;
+  totalPages = 0;
+
+  constructor(private dataService: DataService) {}
+
+  ngOnInit() {
+    this.getData();
+  }
+
+  getData() {
+    this.dataService.getData(this.currentPage, this.pageSize)
+      .subscribe((response: any) => {
+        this.data = response.data;
+        this.totalPages = Math.ceil(response.totalCount / this.pageSize);
+      });
+  }
+
+  nextPage() {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+      this.getData();
+    }
+  }
+
+  previousPage() {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      this.getData();
+    }
+  }
+
+  goToPage(page: number) {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
+      this.getData();
+    }
+  }
+
+  changePageSize(pageSize: number) {
+    this.pageSize = pageSize;
+    this.currentPage = 1; // Reset to first page when changing page size
+    this.getData();
+  }
+}
+
+<!-- data.component.html -->
+<div *ngFor="let item of data">
+  <!-- Display item data -->
+</div>
+
+<button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+<button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+<div *ngFor="let pageNumber of totalPagesArray" (click)="goToPage(pageNumber)">{{pageNumber}}</div>
+
+<select (change)="changePageSize($event.target.value)">
+  <option value="5">5</option>
+  <option value="10">10</option>
+  <option value="20">20</option>
+</select>
+
+//End with pagination and page pageSize
+
+============================================================================
+
+//Sorting for table
+
+<!-- data.component.html -->
+<table class="table">
+  <thead>
+    <tr>
+      <th (click)="sort('id')">ID <i class="fa" [ngClass]="{'fa-sort': !sortDirection, 'fa-sort-asc': sortDirection === 'asc', 'fa-sort-desc': sortDirection === 'desc'}"></i></th>
+      <th (click)="sort('name')">Name <i class="fa" [ngClass]="{'fa-sort': !sortDirectionName, 'fa-sort-asc': sortDirectionName === 'asc', 'fa-sort-desc': sortDirectionName === 'desc'}"></i></th>
+      <!-- Add more columns as needed -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of sortedItems">
+      <td>{{ item.id }}</td>
+      <td>{{ item.name }}</td>
+      <!-- Add more columns as needed -->
+    </tr>
+  </tbody>
+</table>
+
+
+// data.component.ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-data',
+  templateUrl: './data.component.html',
+  styleUrls: ['./data.component.css']
+})
+export class DataComponent {
+  items = [
+    { id: 1, name: 'Item 1' },
+    { id: 2, name: 'Item 2' },
+    { id: 3, name: 'Item 3' },
+    // Add more items as needed
+  ];
+
+  sortedItems = this.items.slice(); // Initialize sortedItems with original items
+  sortDirection = '';
+  sortDirectionName = '';
+
+  sort(key: string) {
+    if (key === 'id') {
+      this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
+      this.sortedItems = this.items.sort((a, b) => {
+        return this.sortDirection === 'asc' ? a.id - b.id : b.id - a.id;
+      });
+    } else if (key === 'name') {
+      this.sortDirectionName = this.sortDirectionName === 'asc' ? 'desc' : 'asc';
+      this.sortedItems = this.items.sort((a, b) => {
+        const nameA = a.name.toUpperCase();
+        const nameB = b.name.toUpperCase();
+        if (nameA < nameB) {
+          return this.sortDirectionName === 'asc' ? -1 : 1;
+        }
+        if (nameA > nameB) {
+          return this.sortDirectionName === 'asc' ? 1 : -1;
+        }
+        return 0;
+      });
+    }
+  }
+}
+
+
+//End Sorting for table

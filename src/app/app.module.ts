@@ -21,6 +21,7 @@ import { ShopCartPageComponent } from './pages/shop-cart-page/shop-cart-page.com
 import { CheckoutPageComponent } from './pages/checkout-page/checkout-page.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { CategoryProductsListComponent } from './pages/category-products-list/category-products-list.component';
+import { OfferPercentagePipe } from './pipes/offer-percentage.pipe';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { CategoryProductsListComponent } from './pages/category-products-list/ca
     ShopCartPageComponent,
     CheckoutPageComponent,
     ContactUsComponent,
-    CategoryProductsListComponent
+    CategoryProductsListComponent,
+    OfferPercentagePipe
   ],
   imports: [
     BrowserModule,

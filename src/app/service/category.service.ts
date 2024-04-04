@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import  * as categoryList  from '../dummy/data.json';
+import  * as bannersList  from '../dummy/data.json';
+
 import { HttpClient } from '@angular/common/http';
 
 
@@ -13,4 +15,10 @@ export class CategoryService {
   getAllCategory(){
     return categoryList;
   }
+
+  getAllBanners(){
+    return bannersList;
+  }
+
+ 
 }

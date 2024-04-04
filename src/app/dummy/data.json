@@ -211,7 +211,7 @@
       "name": "Organic Dried Apricots",
       "description": "Premium quality organic dried apricots, rich in fiber and nutrients.",
       "price": 250,
-      "salePrice": null,
+      "salePrice": 199,
       "category": "Dried Fruits",
       "subCategory": "Apricots",
       "stock": 15,
@@ -266,7 +266,7 @@
       "id": 10,
       "name": "Wireless Noise-Canceling Headphones",
       "description": "Immerse yourself in music with these premium wireless headphones featuring active noise cancellation.",
-      "price": 2999,
+      "price": 3999,
       "salePrice": 1999,
       "category": "Electronics",
       "subCategory": "Headphones",
@@ -294,5 +294,26 @@
     
     
     
+  ],
+
+  "bannersList": [
+    {
+      "id":1100,
+      "title":"Fashionable Dress",
+      "subTitle":"10% OFF YOUR FIRST ORDER",
+      "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "imgLink":"carousel-1.jpg",
+      "urlLink":"",
+      "status":"show"
+    },
+    {
+      "id":1101,
+      "title":"Reasonable Price",
+      "subTitle":"10% OFF YOUR FIRST ORDER",
+      "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "imgLink":"carousel-2.jpg",
+      "urlLink":"",
+      "status":"show"
+    }
   ]
 }
