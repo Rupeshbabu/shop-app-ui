@@ -1,0 +1,298 @@
+{
+  "categoryList": [
+    {
+      "id": 101,
+      "name": "Dried Fruits",
+      "description": "",
+      "imgUrl": "dried-fruit-food.png",
+      "status": "show",
+      "subName": [
+        { "id":1011, "name": "Orange", "status": "on" },
+        { "id":1012,"name": "Banana", "status": "off" },
+        { "id":1013, "name": "Lemon", "status": "on" }
+      ]
+    },
+    {
+      "id": 102,
+      "name": "Women Dresses",
+      "description": "",
+      "imgUrl": "cat-2.jpg",
+      "status": "show",
+      "subName": [
+        { "id":1021, "name": "Sarees", "status": "on" },
+        { "id":1022, "name": "Chudidhar", "status": "on" },
+        { "id":1023, "name": "Night Dress", "status": "on" }
+      ]
+    },
+    {
+      "id": 103,
+      "name": "Electronics",
+      "description": "",
+      "imgUrl": "consumer-electronics.png",
+      "status": "show",
+      "subName": [
+        {"id":1031, "name":"Smartphones", "status":"on"},
+        {"id":1032, "name":"Headphones", "status":"on"}
+      ]
+    }
+  ],
+
+  "productList": [
+    {
+      "id": 1,
+      "name": "Elegant Silk Saree",
+      "description": "This elegant silk saree is perfect for any occasion, featuring intricate embroidery and a beautiful design.",
+      "price": 200,
+      "salePrice": 150,
+      "category": "Women Dresses",
+      "subCategory": "Sarees",
+      "stock": 12,
+      "displayStatus": "new",
+      "status": "show",
+      "images": [
+        {
+          "name": "",
+          "imgUrl": ""
+        },
+        {
+          "name": "",
+          "imgUrl": ""
+        }
+      ],
+      "createdAt": "28-03-2024",
+      "metaTags": [
+        { "tag": "sarees" },
+        { "tag": "latest sarees" },
+        { "tag": "women saree" }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Women's Beautiful Rayon Printed Night suit",
+      "description": "Women's Beautiful Rayon Printed Night suit",
+      "price": 599,
+      "salePrice": 399,
+      "category": "Women Dresses",
+      "subCategory": "Night Dress",
+      "stock": 10,
+      "displayStatus": "old",
+      "status": "show",
+      "images": [
+        {
+          "name": "",
+          "imgUrl": ""
+        },
+        {
+          "name": "",
+          "imgUrl": ""
+        }
+      ],
+      "createdAt": "28-03-2024",
+      "metaTags": [
+        { "tag": "nightdress" },
+        { "tag": "nightware" },
+        { "tag": "women" }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Traditional Cotton Saree",
+      "description": "A classic cotton saree featuring traditional motifs and vibrant colors.",
+      "price": 180,
+      "salePrice": 150,
+      "category": "Women Dresses",
+      "subCategory": "Sarees",
+      "stock": 20,
+      "displayStatus": "new",
+      "status": "show",
+      "images": [
+        {
+          "name": "Saree Front",
+          "imgUrl": "https://example.com/saree-front.jpg"
+        },
+        {
+          "name": "Saree Back",
+          "imgUrl": "https://example.com/saree-back.jpg"
+        }
+      ],
+      "createdAt": "30-03-2024",
+      "metaTags": [
+        { "tag": "sarees" },
+        { "tag": "cotton sarees" },
+        { "tag": "traditional sarees" }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Embroidered Georgette Saree",
+      "description": "An exquisite georgette saree with intricate embroidery, perfect for special occasions.",
+      "price": 250,
+      "salePrice": 200,
+      "category": "Women Dresses",
+      "subCategory": "Sarees",
+      "stock": 15,
+      "displayStatus": "featured",
+      "status": "show",
+      "images": [
+        {
+          "name": "Saree Front",
+          "imgUrl": "https://example.com/saree-front.jpg"
+        },
+        {
+          "name": "Saree Back",
+          "imgUrl": "https://example.com/saree-back.jpg"
+        }
+      ],
+      "createdAt": "01-04-2024",
+      "metaTags": [
+        { "tag": "sarees" },
+        { "tag": "georgette sarees" },
+        { "tag": "embroidered sarees" }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Banarasi Silk Saree",
+      "description": "A luxurious Banarasi silk saree, adorned with intricate zari work.",
+      "price": 300,
+      "salePrice": 250,
+      "category": "Women Dresses",
+      "subCategory": "Sarees",
+      "stock": 10,
+      "displayStatus": "sale",
+      "status": "show",
+      "images": [
+        {
+          "name": "Saree Front",
+          "imgUrl": "https://example.com/saree-front.jpg"
+        },
+        {
+          "name": "Saree Back",
+          "imgUrl": "https://example.com/saree-back.jpg"
+        }
+      ],
+      "createdAt": "05-04-2024",
+      "metaTags": [
+        { "tag": "sarees" },
+        { "tag": "banarasi sarees" },
+        { "tag": "silk sarees" }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Sun-Dried Orange Slices",
+      "description": "Delicious sun-dried orange slices bursting with tangy flavor and natural sweetness.",
+      "price": 200,
+      "salePrice": 150,
+      "category": "Dried Fruits",
+      "subCategory": "Orange",
+      "stock": 10,
+      "displayStatus": "new",
+      "status": "show",
+      "images": [
+        {
+          "name": "Orange Slices Front",
+          "imgUrl": "https://example.com/orange-slices-front.jpg"
+        },
+        {
+          "name": "Orange Slices Back",
+          "imgUrl": "https://example.com/orange-slices-back.jpg"
+        }
+      ],
+      "createdAt": "04-04-2024",
+      "metaTags": [
+        { "tag": "dried fruits" },
+        { "tag": "orange" },
+        { "tag": "healthy snacks" }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Organic Dried Apricots",
+      "description": "Premium quality organic dried apricots, rich in fiber and nutrients.",
+      "price": 250,
+      "salePrice": null,
+      "category": "Dried Fruits",
+      "subCategory": "Apricots",
+      "stock": 15,
+      "displayStatus": "new",
+      "status": "show",
+      "images": [
+        {
+          "name": "Apricots Front",
+          "imgUrl": "https://example.com/apricots-front.jpg"
+        },
+        {
+          "name": "Apricots Back",
+          "imgUrl": "https://example.com/apricots-back.jpg"
+        }
+      ],
+      "createdAt": "04-04-2024",
+      "metaTags": [
+        { "tag": "dried fruits" },
+        { "tag": "apricots" },
+        { "tag": "organic" }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Smartphone X",
+      "description": "The latest flagship smartphone with cutting-edge features and sleek design.",
+      "price": 999,
+      "salePrice": 899,
+      "category": "Electronics",
+      "subCategory": "Smartphones",
+      "stock": 20,
+      "displayStatus": "new",
+      "status": "show",
+      "images": [
+        {
+          "name": "Smartphone X Front",
+          "imgUrl": "https://example.com/smartphone-x-front.jpg"
+        },
+        {
+          "name": "Smartphone X Back",
+          "imgUrl": "https://example.com/smartphone-x-back.jpg"
+        }
+      ],
+      "createdAt": "28-03-2024",
+      "metaTags": [
+        { "tag": "electronics" },
+        { "tag": "smartphones" },
+        { "tag": "flagship" }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Wireless Noise-Canceling Headphones",
+      "description": "Immerse yourself in music with these premium wireless headphones featuring active noise cancellation.",
+      "price": 2999,
+      "salePrice": 1999,
+      "category": "Electronics",
+      "subCategory": "Headphones",
+      "stock": 15,
+      "displayStatus": "featured",
+      "status": "show",
+      "images": [
+        {
+          "name": "Headphones Front",
+          "imgUrl": "https://example.com/headphones-front.jpg"
+        },
+        {
+          "name": "Headphones Back",
+          "imgUrl": "https://example.com/headphones-back.jpg"
+        }
+      ],
+      "createdAt": "02-04-2024",
+      "metaTags": [
+        { "tag": "electronics" },
+        { "tag": "headphones" },
+        { "tag": "noise-canceling" }
+      ]
+    }
+    
+    
+    
+    
+  ]
+}

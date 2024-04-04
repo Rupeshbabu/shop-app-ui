@@ -1,0 +1,5 @@
+.cat-item a img{
+    object-fit: cover;
+    width: 326px;
+    height: 261px;
+}
